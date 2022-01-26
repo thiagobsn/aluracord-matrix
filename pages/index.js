@@ -24,7 +24,7 @@ export default function PaginaInicial() {
   const [username, setUsername] = React.useState("thiagobsn");
 
   const usernameValido = () => {
-    return username && username.length > 3;
+    return username && username.length > 2;
   };
 
   return (
@@ -108,7 +108,7 @@ export default function PaginaInicial() {
               type="submit"
               label="Entrar"
               fullWidth
-              disabled={username.length < 3}
+              disabled={!usernameValido()}
               buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
                 mainColor: appConfig.theme.colors.primary[500],
